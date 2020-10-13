@@ -1,13 +1,19 @@
 <template>
   <div class="container">
-      <ul class="story-list" v-for="story in stories" :key="story.id">
-        <li class="story-item">
-          <p>{{ story.title }}</p>
-          <p>{{ story.descendants }}</p>
-          <p>{{ story.score }}</p>
-          <p>{{ story.by }}</p>
-        </li>
-      </ul>
+      <table class="story-list">
+        <tbody>
+          <template v-for="story in stories" >
+            <tr :key="story.id">
+              <td colspan="3">{{ story.title }}</td>
+            </tr>
+            <tr :key="story.id">
+              <td>{{ story.score }} points by {{ story.by }} {{story.time}} ago</td>
+              <td>hide</td>
+              <td>{{ story.descendants }} comments</td>
+            </tr>
+          </template>
+        </tbody>
+      </table>
   </div>
 </template>
 
@@ -46,5 +52,9 @@ export default {
 </script>
 
 <style>
+
+.story-list {
+  text-align: left;
+}
 
 </style>
