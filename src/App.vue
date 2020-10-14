@@ -32,5 +32,6 @@ export default {
 .container {
   width: 70%;
   margin: auto;
+  background-color: #f6f6ef;
 }
 </style>
